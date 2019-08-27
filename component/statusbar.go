@@ -25,7 +25,7 @@ func NewStatusBar(configFileName string, palette console.Palette, license *metad
 	block := *ui.NewBlock()
 	block.Border = false
 	text := fmt.Sprintf(" %s %s | ", console.AppTitle, console.AppVersion)
-
+        /*
 	if license == nil || !license.Valid || license.Type == nil {
 		text += console.AppLicenseWarning
 	} else if *license.Type == metadata.TypePersonal {
@@ -38,7 +38,7 @@ func NewStatusBar(configFileName string, palette console.Palette, license *metad
 	} else {
 		text += fmt.Sprintf("%s | licensed to %s", configFileName, *license.Company)
 	}
-
+        */
 	return &StatusBar{
 		Block: NewBlock("", false, palette),
 		text:  text,
