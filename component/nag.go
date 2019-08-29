@@ -2,7 +2,7 @@ package component
 
 import (
 	ui "github.com/gizak/termui/v3"
-	"github.com/djvu/sampler/component/util"
+	//"github.com/djvu/sampler/component/util"
 	"github.com/djvu/sampler/console"
 )
 
@@ -29,29 +29,5 @@ func (n *NagWindow) IsAccepted() bool {
 }
 
 func (n *NagWindow) Draw(buffer *ui.Buffer) {
-
         return
-
-	text := append(util.AsciiLogo, []string{
-		"", "", "",
-		"Thank you for using Sampler.",
-		"It is always free, but you can sponsor the project and buy the personal or commercial license",
-		"for priority support and technical assistance.",
-		"",
-		"Please visit www.sampler.dev",
-	}...)
-
-	for i, a := range text {
-		util.PrintString(
-			a,
-			ui.NewStyle(n.palette.BaseColor),
-			util.GetMiddlePoint(n.Block.Rectangle, a, i-15),
-			buffer)
-	}
-
-	buffer.SetString(buttonOk, ui.NewStyle(n.palette.ReverseColor, n.palette.BaseColor),
-		util.GetMiddlePoint(n.Block.Rectangle, buttonOk, 4))
-        
-        // FUCKyou 10")
-	n.Block.Draw(buffer)
 }
