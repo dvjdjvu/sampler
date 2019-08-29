@@ -29,7 +29,8 @@ func (n *NagWindow) IsAccepted() bool {
 }
 
 func (n *NagWindow) Draw(buffer *ui.Buffer) {
-        // FUCKyou")
+
+        return
 
 	text := append(util.AsciiLogo, []string{
 		"", "", "",

@@ -23,10 +23,10 @@ type StatusBar struct {
 
 func NewStatusBar(configFileName string, palette console.Palette, license *metadata.License) *StatusBar {
 
-        log.Println("SUKA")
+        log.Println("Sampler")
 	block := *ui.NewBlock()
 	block.Border = false
-	text := fmt.Sprintf("zzz %s %s vvvv", console.AppTitle, console.AppVersion)
+	text := fmt.Sprintf("%s %s", console.AppTitle, console.AppVersion)
         /*
 	if license == nil || !license.Valid || license.Type == nil {
 		text += console.AppLicenseWarning
