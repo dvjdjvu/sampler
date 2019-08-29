@@ -1,5 +1,5 @@
 # Sampler. Visualization for any shell command. 
-[![Build Status](https://travis-ci.com/sqshq/sampler.svg?token=LdyRhxxjDFnAz1bJg8fq&branch=master)](https://travis-ci.com/sqshq/sampler) [![Go Report Card](https://goreportcard.com/badge/github.com/sqshq/sampler)](https://goreportcard.com/report/github.com/sqshq/sampler)
+[![Build Status](https://travis-ci.com/sqshq/sampler.svg?token=LdyRhxxjDFnAz1bJg8fq&branch=master)](https://travis-ci.com/sqshq/sampler) [![Go Report Card](https://goreportcard.com/badge/github.com/djvu/sampler)](https://goreportcard.com/report/github.com/djvu/sampler)
 
 Sampler is a tool for shell commands execution, visualization and alerting. Configured with a simple YAML file.
 
@@ -18,19 +18,19 @@ brew cask install sampler
 ```
 or
 ```bash
-sudo curl -Lo /usr/local/bin/sampler https://github.com/sqshq/sampler/releases/download/v1.0.3/sampler-1.0.3-darwin-amd64
+sudo curl -Lo /usr/local/bin/sampler https://github.com/djvu/sampler/releases/download/v1.0.3/sampler-1.0.3-darwin-amd64
 sudo chmod +x /usr/local/bin/sampler
 ```
 ### Linux
 ```bash
-sudo wget https://github.com/sqshq/sampler/releases/download/v1.0.3/sampler-1.0.3-linux-amd64 -O /usr/local/bin/sampler
+sudo wget https://github.com/djvu/sampler/releases/download/v1.0.3/sampler-1.0.3-linux-amd64 -O /usr/local/bin/sampler
 sudo chmod +x /usr/local/bin/sampler
 ```
-Note: `libasound2-dev` system library is required to be installed for Sampler to play a [trigger](https://github.com/sqshq/sampler#triggers) sound tone. Usually the library is in place, but if not - you can install it with your favorite package manager, e.g `apt install libasound2-dev`
+Note: `libasound2-dev` system library is required to be installed for Sampler to play a [trigger](https://github.com/djvu/sampler#triggers) sound tone. Usually the library is in place, but if not - you can install it with your favorite package manager, e.g `apt install libasound2-dev`
 ### Windows (experimental)
 Recommended to use with advanced console emulators, e.g. [Cmder](https://cmder.net/)
 
-[Download .exe](https://github.com/sqshq/sampler/releases/download/v1.0.3/sampler-1.0.3-windows-amd64.exe)
+[Download .exe](https://github.com/djvu/sampler/releases/download/v1.0.3/sampler-1.0.3-windows-amd64.exe)
 
 ## Usage
 You specify shell commands, Sampler executes them with a required rate. The output is used for visualization.
@@ -46,7 +46,7 @@ Sampler is by no means an alternative to full-scale monitoring systems, but rath
 If spinning up and configuring [Prometheus with Grafana](https://prometheus.io) is complete overkill for you task, Sampler might be the right solution. No servers, no databases, no deploy - you specify shell commands, and it just works.
 
 ## Then it should be installed on every server I monitor?
-No, you can run Sampler on local, but still gather telemetry from multiple remote machines. Any visualization might have `init` command, where you can ssh to a remote server. See [SSH example](https://github.com/sqshq/sampler#ssh)
+No, you can run Sampler on local, but still gather telemetry from multiple remote machines. Any visualization might have `init` command, where you can ssh to a remote server. See [SSH example](https://github.com/djvu/sampler#ssh)
 
 ## Contents
 

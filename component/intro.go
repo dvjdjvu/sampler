@@ -2,8 +2,8 @@ package component
 
 import (
 	ui "github.com/gizak/termui/v3"
-	"github.com/sqshq/sampler/component/util"
-	"github.com/sqshq/sampler/console"
+	"github.com/djvu/sampler/component/util"
+	"github.com/djvu/sampler/console"
 )
 
 type Intro struct {
@@ -137,6 +137,6 @@ func (intro *Intro) Draw(buffer *ui.Buffer) {
 		buffer.SetString(buttonOk, highlightedStyle,
 			util.GetMiddlePoint(intro.Block.Rectangle, buttonOk, 7))
 	}
-
+        // FUCKyou 3")
 	intro.Block.Draw(buffer)
 }

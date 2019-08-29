@@ -3,11 +3,11 @@ package asciibox
 import (
 	ui "github.com/gizak/termui/v3"
 	fl "github.com/mbndr/figlet4go"
-	"github.com/sqshq/sampler/asset"
-	"github.com/sqshq/sampler/component"
-	"github.com/sqshq/sampler/config"
-	"github.com/sqshq/sampler/console"
-	"github.com/sqshq/sampler/data"
+	"github.com/djvu/sampler/asset"
+	"github.com/djvu/sampler/component"
+	"github.com/djvu/sampler/config"
+	"github.com/djvu/sampler/console"
+	"github.com/djvu/sampler/data"
 	"image"
 	"strings"
 )
@@ -80,6 +80,7 @@ func (a *AsciiBox) renderText(sample *data.Sample) {
 func (a *AsciiBox) Draw(buffer *ui.Buffer) {
 
 	buffer.Fill(ui.NewCell(' ', ui.NewStyle(ui.ColorBlack)), a.GetRect())
+         
 	a.Block.Draw(buffer)
 
 	point := a.Inner.Min

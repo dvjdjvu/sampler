@@ -2,10 +2,10 @@ package textbox
 
 import (
 	ui "github.com/gizak/termui/v3"
-	"github.com/sqshq/sampler/component"
-	"github.com/sqshq/sampler/config"
-	"github.com/sqshq/sampler/console"
-	"github.com/sqshq/sampler/data"
+	"github.com/djvu/sampler/component"
+	"github.com/djvu/sampler/config"
+	"github.com/djvu/sampler/console"
+	"github.com/djvu/sampler/data"
 	"image"
 )
 
@@ -47,7 +47,7 @@ func NewTextBox(c config.TextBoxConfig, palette console.Palette) *TextBox {
 }
 
 func (t *TextBox) Draw(buffer *ui.Buffer) {
-
+        // FUCKyou 15")
 	t.Block.Draw(buffer)
 
 	cells := ui.ParseStyles(t.text, ui.Theme.Paragraph.Text)

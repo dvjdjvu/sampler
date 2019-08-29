@@ -2,7 +2,7 @@ package runchart
 
 import (
 	ui "github.com/gizak/termui/v3"
-	"github.com/sqshq/sampler/component/util"
+	"github.com/djvu/sampler/component/util"
 	"image"
 	"math"
 	"time"

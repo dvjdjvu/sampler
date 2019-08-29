@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/sqshq/sampler/console"
+	"github.com/djvu/sampler/console"
 )
 
 const (

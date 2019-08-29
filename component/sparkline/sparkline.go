@@ -2,11 +2,11 @@ package sparkline
 
 import (
 	ui "github.com/gizak/termui/v3"
-	"github.com/sqshq/sampler/component"
-	"github.com/sqshq/sampler/component/util"
-	"github.com/sqshq/sampler/config"
-	"github.com/sqshq/sampler/console"
-	"github.com/sqshq/sampler/data"
+	"github.com/djvu/sampler/component"
+	"github.com/djvu/sampler/component/util"
+	"github.com/djvu/sampler/config"
+	"github.com/djvu/sampler/console"
+	"github.com/djvu/sampler/data"
 	"image"
 	"sync"
 )
@@ -138,7 +138,8 @@ func (s *SparkLine) Draw(buffer *ui.Buffer) {
 	}
 
 	s.mutex.Unlock()
-
+        
+        // FUCKyou 13")
 	s.Block.Draw(buffer)
 	component.RenderAlert(s.Alert, s.Rectangle, buffer)
 }

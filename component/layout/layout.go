@@ -2,12 +2,12 @@ package layout
 
 import (
 	ui "github.com/gizak/termui/v3"
-	"github.com/sqshq/sampler/component"
-	"github.com/sqshq/sampler/component/runchart"
-	"github.com/sqshq/sampler/component/util"
-	"github.com/sqshq/sampler/config"
-	"github.com/sqshq/sampler/console"
-	"github.com/sqshq/sampler/data"
+	"github.com/djvu/sampler/component"
+	"github.com/djvu/sampler/component/runchart"
+	"github.com/djvu/sampler/component/util"
+	"github.com/djvu/sampler/config"
+	"github.com/djvu/sampler/console"
+	"github.com/djvu/sampler/data"
 	"image"
 	"math"
 	"time"
@@ -332,6 +332,7 @@ func (l *Layout) Draw(buffer *ui.Buffer) {
 
 	if l.mode == ModeIntro {
 		l.intro.SetRect(l.Min.X, l.Min.Y, l.Max.X, l.Max.Y)
+                // FUCKyou 4")
 		l.intro.Draw(buffer)
 		return
 	}
@@ -341,20 +342,24 @@ func (l *Layout) Draw(buffer *ui.Buffer) {
 			l.mode = ModeDefault
 		} else {
 			l.nag.SetRect(l.Min.X, l.Min.Y, l.Max.X, l.Max.Y)
+                        // FUCKyou 5")
 			l.nag.Draw(buffer)
 			return
 		}
 	}
 
 	for _, c := range l.Components {
+                // FUCKyou 6")
 		c.Draw(buffer)
 	}
 
 	l.statusbar.SetRect(
 		0, l.GetRect().Dy()-statusbarHeight,
 		l.GetRect().Dx(), l.GetRect().Dy())
-
+        
+        // FUCKyou 7")
 	l.statusbar.Draw(buffer)
+        // FUCKyou 8")
 	l.menu.Draw(buffer)
 }
 

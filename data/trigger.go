@@ -2,9 +2,9 @@ package data
 
 import (
 	"fmt"
-	"github.com/sqshq/sampler/asset"
-	"github.com/sqshq/sampler/config"
-	"github.com/sqshq/sampler/console"
+	"github.com/djvu/sampler/asset"
+	"github.com/djvu/sampler/config"
+	"github.com/djvu/sampler/console"
 	"os"
 	"os/exec"
 	"regexp"

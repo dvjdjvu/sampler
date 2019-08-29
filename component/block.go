@@ -3,7 +3,7 @@ package component
 import (
 	"fmt"
 	ui "github.com/gizak/termui/v3"
-	"github.com/sqshq/sampler/console"
+	"github.com/djvu/sampler/console"
 )
 
 func NewBlock(title string, border bool, palette console.Palette) *ui.Block {

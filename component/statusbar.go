@@ -1,10 +1,11 @@
 package component
 
 import (
+        "log"
 	"fmt"
 	ui "github.com/gizak/termui/v3"
-	"github.com/sqshq/sampler/console"
-	"github.com/sqshq/sampler/metadata"
+	"github.com/djvu/sampler/console"
+	"github.com/djvu/sampler/metadata"
 	"image"
 )
 
@@ -22,9 +23,10 @@ type StatusBar struct {
 
 func NewStatusBar(configFileName string, palette console.Palette, license *metadata.License) *StatusBar {
 
+        log.Println("SUKA")
 	block := *ui.NewBlock()
 	block.Border = false
-	text := fmt.Sprintf(" %s %s | ", console.AppTitle, console.AppVersion)
+	text := fmt.Sprintf("zzz %s %s vvvv", console.AppTitle, console.AppVersion)
         /*
 	if license == nil || !license.Valid || license.Type == nil {
 		text += console.AppLicenseWarning
@@ -66,7 +68,7 @@ func (s *StatusBar) Draw(buffer *ui.Buffer) {
 	if s.pause {
 		buffer.SetString(pauseText, ui.NewStyle(console.GetMenuColorReverse(), console.GetMenuColor()), image.Pt(s.Max.X-s.Dx()/2-len(pauseText)/2, s.Min.Y))
 	}
-
+        // FUCKyou 14")
 	s.Block.Draw(buffer)
 }
 

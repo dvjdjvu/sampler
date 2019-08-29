@@ -2,10 +2,10 @@ package event
 
 import (
 	ui "github.com/gizak/termui/v3"
-	"github.com/sqshq/sampler/component/layout"
-	"github.com/sqshq/sampler/config"
-	"github.com/sqshq/sampler/console"
-	"github.com/sqshq/sampler/data"
+	"github.com/djvu/sampler/component/layout"
+	"github.com/djvu/sampler/config"
+	"github.com/djvu/sampler/console"
+	"github.com/djvu/sampler/data"
 	"time"
 )
 

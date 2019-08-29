@@ -2,8 +2,8 @@ package component
 
 import (
 	ui "github.com/gizak/termui/v3"
-	"github.com/sqshq/sampler/config"
-	"github.com/sqshq/sampler/data"
+	"github.com/djvu/sampler/config"
+	"github.com/djvu/sampler/data"
 )
 
 type Component struct {

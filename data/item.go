@@ -3,7 +3,7 @@ package data
 import (
 	ui "github.com/gizak/termui/v3"
 	"github.com/lunixbochs/vtclean"
-	"github.com/sqshq/sampler/config"
+	"github.com/djvu/sampler/config"
 	"os"
 	"os/exec"
 	"time"

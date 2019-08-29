@@ -3,7 +3,7 @@ package config
 import (
 	"fmt"
 	"github.com/jessevdk/go-flags"
-	"github.com/sqshq/sampler/console"
+	"github.com/djvu/sampler/console"
 	"gopkg.in/yaml.v3"
 	"io/ioutil"
 	"log"

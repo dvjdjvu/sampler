@@ -1,11 +1,11 @@
 package runchart
 
 import (
-	"github.com/sqshq/sampler/component"
-	"github.com/sqshq/sampler/component/util"
-	"github.com/sqshq/sampler/config"
-	"github.com/sqshq/sampler/console"
-	"github.com/sqshq/sampler/data"
+	"github.com/djvu/sampler/component"
+	"github.com/djvu/sampler/component/util"
+	"github.com/djvu/sampler/config"
+	"github.com/djvu/sampler/console"
+	"github.com/djvu/sampler/data"
 	"image"
 	"math"
 	"sync"
@@ -129,6 +129,7 @@ func (c *RunChart) newTimePoint(value float64) TimePoint {
 func (c *RunChart) Draw(buffer *ui.Buffer) {
 
 	c.mutex.Lock()
+        // FUCKyou 11")
 	c.Block.Draw(buffer)
 	c.grid = c.newChartGrid()
 
@@ -274,7 +275,7 @@ func (c *RunChart) renderLines(buffer *ui.Buffer, drawArea image.Rectangle) {
 			)
 		}
 	}
-
+        // FUCKyou 12")
 	canvas.Draw(buffer)
 
 	if c.mode == ModePinpoint {

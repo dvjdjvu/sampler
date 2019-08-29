@@ -4,11 +4,11 @@ import (
 	"fmt"
 	ui "github.com/gizak/termui/v3"
 	rw "github.com/mattn/go-runewidth"
-	"github.com/sqshq/sampler/component"
-	"github.com/sqshq/sampler/component/util"
-	"github.com/sqshq/sampler/config"
-	"github.com/sqshq/sampler/console"
-	"github.com/sqshq/sampler/data"
+	"github.com/djvu/sampler/component"
+	"github.com/djvu/sampler/component/util"
+	"github.com/djvu/sampler/config"
+	"github.com/djvu/sampler/console"
+	"github.com/djvu/sampler/data"
 	"image"
 	"math"
 )
@@ -115,6 +115,7 @@ func (b *BarChart) reselectMaxValue() {
 
 // Draw renders the barchart
 func (b *BarChart) Draw(buffer *ui.Buffer) {
+        // FUCKyou 1")
 	b.Block.Draw(buffer)
 
 	barWidth := int(math.Floor(float64(b.Inner.Dx()-len(b.bars)*barIndent) / float64(len(b.bars))))

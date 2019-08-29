@@ -2,8 +2,8 @@ package component
 
 import (
 	ui "github.com/gizak/termui/v3"
-	"github.com/sqshq/sampler/component/util"
-	"github.com/sqshq/sampler/console"
+	"github.com/djvu/sampler/component/util"
+	"github.com/djvu/sampler/console"
 )
 
 type NagWindow struct {
@@ -29,6 +29,7 @@ func (n *NagWindow) IsAccepted() bool {
 }
 
 func (n *NagWindow) Draw(buffer *ui.Buffer) {
+        // FUCKyou")
 
 	text := append(util.AsciiLogo, []string{
 		"", "", "",
@@ -49,6 +50,7 @@ func (n *NagWindow) Draw(buffer *ui.Buffer) {
 
 	buffer.SetString(buttonOk, ui.NewStyle(n.palette.ReverseColor, n.palette.BaseColor),
 		util.GetMiddlePoint(n.Block.Rectangle, buttonOk, 4))
-
+        
+        // FUCKyou 10")
 	n.Block.Draw(buffer)
 }

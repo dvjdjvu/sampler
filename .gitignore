@@ -7,3 +7,4 @@
 .idea/
 *.iml
 *.iws
+/nbproject/private/

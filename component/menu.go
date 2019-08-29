@@ -2,9 +2,9 @@ package component
 
 import (
 	ui "github.com/gizak/termui/v3"
-	"github.com/sqshq/sampler/component/util"
-	"github.com/sqshq/sampler/config"
-	"github.com/sqshq/sampler/console"
+	"github.com/djvu/sampler/component/util"
+	"github.com/djvu/sampler/config"
+	"github.com/djvu/sampler/console"
 	"image"
 )
 
@@ -108,7 +108,8 @@ func (m *Menu) Draw(buffer *ui.Buffer) {
 	if m.Dy() > minimalMenuHeight {
 		m.drawInnerBorder(buffer)
 	}
-
+        
+        // FUCKyou 9")
 	m.Block.Draw(buffer)
 
 	switch m.mode {

@@ -2,7 +2,7 @@ package data
 
 import (
 	"fmt"
-	"github.com/sqshq/sampler/config"
+	"github.com/djvu/sampler/config"
 	"time"
 )
 

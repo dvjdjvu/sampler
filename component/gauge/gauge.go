@@ -3,11 +3,11 @@ package gauge
 import (
 	"fmt"
 	ui "github.com/gizak/termui/v3"
-	"github.com/sqshq/sampler/component"
-	"github.com/sqshq/sampler/component/util"
-	"github.com/sqshq/sampler/config"
-	"github.com/sqshq/sampler/console"
-	"github.com/sqshq/sampler/data"
+	"github.com/djvu/sampler/component"
+	"github.com/djvu/sampler/component/util"
+	"github.com/djvu/sampler/config"
+	"github.com/djvu/sampler/console"
+	"github.com/djvu/sampler/data"
 	"image"
 )
 
@@ -79,7 +79,7 @@ func (g *Gauge) ConsumeSample(sample *data.Sample) {
 }
 
 func (g *Gauge) Draw(buffer *ui.Buffer) {
-
+        // FUCKyou 2")
 	g.Block.Draw(buffer)
 
 	percent := calculatePercent(g)
