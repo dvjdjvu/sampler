@@ -76,10 +76,6 @@ func main() {
 	statistics := metadata.GetStatistics(cfg)
 	license := metadata.GetLicense()
 
-	if opt.LicenseKey != nil {
-		registerLicense(statistics, opt, bc)
-	}
-
 	console.Init()
 	defer console.Close()
 
@@ -94,22 +90,6 @@ func main() {
 	palette := console.GetPalette(*cfg.Theme)
 	lout := layout.NewLayout(component.NewStatusBar(*opt.ConfigFile, palette, license),
 		component.NewMenu(palette), component.NewIntro(palette), component.NewNagWindow(palette))
-
-	if statistics.LaunchCount == 0 {
-		if !opt.DisableTelemetry {
-			go bc.ReportInstallation(statistics)
-		}
-		lout.StartWithIntro()
-	} else if statistics.LaunchCount%20 == 0 { // once in a while
-		if license == nil || !license.Valid {
-			lout.StartWithNagWindow()
-		} else {
-			go verifyLicense(license, bc)
-		}
-		if !opt.DisableTelemetry {
-			go bc.ReportStatistics(statistics)
-		}
-	}
 
 	starter := &Starter{player, lout, palette, opt, *cfg}
 	samplers := starter.startAll()
@@ -130,21 +110,4 @@ func handleCrash(statistics *metadata.Statistics, opt config.Options, bc *client
 
 func updateStatistics(cfg *config.Config, startTime time.Time) {
 	metadata.PersistStatistics(cfg, time.Since(startTime))
-}
-
-func registerLicense(statistics *metadata.Statistics, opt config.Options, bc *client.BackendClient) {
-	lc, err := bc.RegisterLicenseKey(*opt.LicenseKey, statistics)
-	if err != nil {
-		console.Exit("License registration failed: " + err.Error())
-	} else {
-		metadata.SaveLicense(*lc)
-		console.Exit("License successfully verified, Sampler can be restarted without --license flag now. Thank you.")
-	}
-}
-
-func verifyLicense(license *metadata.License, bc *client.BackendClient) {
-	verifiedLicense, _ := bc.VerifyLicenseKey(*license.Key)
-	if verifiedLicense != nil {
-		metadata.SaveLicense(*verifiedLicense)
-	}
 }

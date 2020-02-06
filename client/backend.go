@@ -3,9 +3,7 @@ package client
 import (
 	"bytes"
 	"encoding/json"
-	"errors"
 	"github.com/djvu/sampler/metadata"
-	"io/ioutil"
 	"net/http"
 )
 
@@ -76,70 +74,6 @@ func (c *BackendClient) ReportCrash(error string, statistics *metadata.Statistic
 	}
 
 	_, _ = sendRequest(backendUrl+crashPath, buf)
-}
-
-func (c *BackendClient) RegisterLicenseKey(licenseKey string, statistics *metadata.Statistics) (*metadata.License, error) {
-
-	req := struct {
-		LicenseKey string
-		Statistics *metadata.Statistics
-	}{
-		licenseKey,
-		statistics,
-	}
-
-	buf := new(bytes.Buffer)
-	err := json.NewEncoder(buf).Encode(req)
-	if err != nil {
-		c.ReportCrash(err.Error(), statistics)
-	}
-
-	response, err := sendRequest(backendUrl+registrationPath, buf)
-
-	if err != nil {
-		return nil, err
-	}
-
-	if response.StatusCode != 200 {
-		body, _ := ioutil.ReadAll(response.Body)
-		return nil, errors.New(string(body))
-	}
-
-	var license metadata.License
-	json.NewDecoder(response.Body).Decode(&license)
-
-	return &license, nil
-}
-
-func (c *BackendClient) VerifyLicenseKey(licenseKey string) (*metadata.License, error) {
-
-	req := struct {
-		LicenseKey string
-	}{
-		licenseKey,
-	}
-
-	buf := new(bytes.Buffer)
-	err := json.NewEncoder(buf).Encode(req)
-	if err != nil {
-		c.ReportCrash(err.Error(), nil)
-	}
-
-	response, err := sendRequest(backendUrl+verificationPath, buf)
-
-	if err != nil {
-		return nil, err
-	}
-
-	if response.StatusCode != 200 {
-		body, _ := ioutil.ReadAll(response.Body)
-		return nil, errors.New(string(body))
-	}
-
-	var license metadata.License
-	json.NewDecoder(response.Body).Decode(&license)
-
-	return &license, nil
 }
 
 func sendRequest(url string, body *bytes.Buffer) (resp *http.Response, err error) {

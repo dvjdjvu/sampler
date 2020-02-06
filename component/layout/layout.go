@@ -79,10 +79,6 @@ func (l *Layout) StartWithIntro() {
 	l.mode = ModeIntro
 }
 
-func (l *Layout) StartWithNagWindow() {
-	l.mode = ModeNag
-}
-
 func (l *Layout) changeMode(m Mode) {
 	if m == ModeComponentResize || m == ModeComponentMove {
 		l.positionsChanged = true
